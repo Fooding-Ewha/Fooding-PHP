@@ -16,10 +16,10 @@
 	<section id="main">
 		<?php
 			include_once $_SERVER["DOCUMENT_ROOT"]."/php/mysqli.inc";
-            $restaurantList = $mysqli->query("select * from resturant");
+            $restaurantList = $mysqli->query("select * from restaurant");
             if($restaurantList) {
-                while($row = $restaurantList->fetch_array(MYSQLI_ASSOC){
-                    print"<p>$row[name]</p>";
+                while($row = $restaurantList->fetch_array(MYSQLI_ASSOC)){
+                    print "<p>$row[name]</p>";
                 }
             }
 		?>
