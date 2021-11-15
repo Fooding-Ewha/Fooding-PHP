@@ -9,9 +9,9 @@
 	<!-- <link rel="stylesheet" href="/css/main.css"> -->
 </head>
 <body>
-	<!-- <?php
-		include $_SERVER["DOCUMENT_ROOT"]."/php/nav.php";
-	?> -->
+ <?php
+	include $_SERVER["DOCUMENT_ROOT"]."/php/nav.php";
+?>
 
 	<section id="main">
 		<?php
