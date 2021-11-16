@@ -22,7 +22,7 @@
  $region_list = $mysqli->query('select * from Region');
  if ($region_list) {
    while ($row = $region_list->fetch_array(MYSQLI_ASSOC)) {
-     print "<a href='/rank?q=$row[name]' style='font-size: 1px;'>$row[name]</a>";
+     print "<a href='/rank?region=$row[region_id]&value=$row[name]' style='font-size: 1px;'>$row[name]</a>";
    }
  }
  ?>
@@ -34,7 +34,7 @@
  $category_list = $mysqli->query('select * from Category');
  if ($category_list) {
    while ($row = $category_list->fetch_array(MYSQLI_ASSOC)) {
-     print "<a href='/rank?q=$row[name]' style='font-size: 1px;'>$row[name]</a>";
+     print "<a href='/rank?category=$row[category_id]&value=$row[name]' style='font-size: 1px;'>$row[name]</a>";
    }
  }
  ?>
