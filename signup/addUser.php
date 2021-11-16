@@ -24,7 +24,7 @@ if ($res_user->num_rows > 0) {
     $nickname .
     "')";
   $mysqli->query($query);
-  echo "<script>alert('회원가입이 완료되었습니다.');</script>";
+  echo "<script>alert('Sign Up Successfully Completed!');</script>";
   echo "<script>location.href='../login';</script>";
 }
 ?>

@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php session_start();
+include $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
+?>
 
 <!DOCTYPE html>
 <html>
@@ -9,7 +11,6 @@
 	<!-- <link rel="stylesheet" href="/css/main.css"> -->
 </head>
 <body>
- <?php include $_SERVER['DOCUMENT_ROOT'] . '/php/nav.php'; ?>
 
 	<section id="main">
 		<form method="POST" action="addUser.php">

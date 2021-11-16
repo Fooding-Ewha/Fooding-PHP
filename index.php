@@ -9,18 +9,22 @@
 	<link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
- <?php include $_SERVER['DOCUMENT_ROOT'] . '/php/nav.php'; ?>
+ <?php
+ include $_SERVER['DOCUMENT_ROOT'] . '/php/nav.php';
+ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
+ ?>
 
-		<section id="main">
-			<?php
-   include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
-   $keyword_list = $mysqli->query('select * from Keyword');
-   if ($keyword_list) {
-     // while ($row = $keyword_list->fetch_array(MYSQLI_ASSOC)) {
-     //  print "<p>$row[name]</p>";
-     // }
+<section id="main">
+<div class="container" style="display: flex; flex-direction: column">
+	<?php
+ $region_list = $mysqli->query('select * from Region');
+ if ($region_list) {
+   while ($row = $region_list->fetch_array(MYSQLI_ASSOC)) {
+     print "<a href='/rank?q=$row[name]' style='font-size: 1px;'>$row[name]</a>";
    }
-   ?>
+ }
+ ?>
+   </div>
 		</section>
 	</element>
 <form action="/search/search.php" method="GET">
