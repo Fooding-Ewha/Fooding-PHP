@@ -15,7 +15,9 @@
  ?>
 
 <section id="main">
-<div class="container" style="display: flex; flex-direction: column">
+<nav class="nav-bar" style="position: absolute; left: 10px; top: 10px;">
+<div class="container" style="display: flex; flex-direction: column; ">
+<h3>Region</h3>
 	<?php
  $region_list = $mysqli->query('select * from Region');
  if ($region_list) {
@@ -25,8 +27,21 @@
  }
  ?>
    </div>
-		</section>
-	</element>
+   
+   <div class="container" style="display: flex; flex-direction: column; ">
+   <h3>Category</h3>
+	<?php
+ $category_list = $mysqli->query('select * from Category');
+ if ($category_list) {
+   while ($row = $category_list->fetch_array(MYSQLI_ASSOC)) {
+     print "<a href='/rank?q=$row[name]' style='font-size: 1px;'>$row[name]</a>";
+   }
+ }
+ ?>
+   </div>
+   </nav>
+	</section>
+</element>
 <form action="/search/search.php" method="GET">
 	<input type="text" name="query" />
 	<input type="submit" value="Search" />
