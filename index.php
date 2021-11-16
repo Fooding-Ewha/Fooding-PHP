@@ -14,11 +14,11 @@
 		<section id="main">
 			<?php
    include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
-   $restaurantList = $mysqli->query('select * from Restaurant');
-   if ($restaurantList) {
-     while ($row = $restaurantList->fetch_array(MYSQLI_ASSOC)) {
-       print "<p>$row[name]</p>";
-     }
+   $keyword_list = $mysqli->query('select * from Keyword');
+   if ($keyword_list) {
+     // while ($row = $keyword_list->fetch_array(MYSQLI_ASSOC)) {
+     //  print "<p>$row[name]</p>";
+     // }
    }
    ?>
 		</section>

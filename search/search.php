@@ -21,6 +21,8 @@ $query = $_GET['query'];
     "%'"
 )) or die($mysqli->error);
 if ($raw_results->num_rows > 0) {
+  echo 'Search result for ' . $query;
+
   while ($results = $raw_results->fetch_array(MYSQLI_ASSOC)) {
     echo '<p><h3>' . $results['name'] . '</h3>' . $results['address'] . '</p>';
   }

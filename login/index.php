@@ -13,7 +13,8 @@
 
 	<section id="main">
 		<form method="POST" action="login.php">
-            <input type="text" name="text"></input>
+            <input type="text" name="user_id"></input>
+            <input type="password" name="user_password"></input>
             <input type="submit" name="submit"></input>
         </form>
 	</section>
