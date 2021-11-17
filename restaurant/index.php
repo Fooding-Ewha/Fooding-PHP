@@ -8,14 +8,16 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
 	<meta charset="utf-8">
 	<title>Fooding</title>
 
-	<link rel="stylesheet" href="/css/main.css">
+	<!--<link rel="stylesheet" href="/css/main.css">-->
 </head>
 <body>
    
 <section id="main" style="display: flex; flex-direction: column;">
+
  <?php
  $restaurant_id = $_GET['id'];
  if (isset($restaurant_id)) {
+   print "<a href='/review?id=$restaurant_id'>Click here to see the reviews</a>"; // 리뷰 페이지로 이동하는 링크
    $result = $mysqli->query(
      "SELECT * FROM Restaurant WHERE restaurant_id='" . $restaurant_id . "'"
    );
@@ -24,8 +26,8 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
  if ($result->num_rows > 0) {
    while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
      print "<img src='$row[image]' style='width: 370px; height: 280px;'></img>"; // 이미지
-     print "<h3>$row[name]</h3>";
-     print "<h3>$row[address]</h3>";
+     print "<h3>$row[name]</h3>"; // 식당 이름
+     print "<h3>$row[address]</h3>"; // 식당 주소
    }
  } else {
    die('Error occured on loading restaurant information.');
