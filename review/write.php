@@ -19,5 +19,7 @@ $query =
 $result = $mysqli->query($query);
 if ($result) {
   print "<script>alert('Review Successfully Posted.');  location.href='../review?id=$restaurant_id'</script>";
+} else {
+  print "<script>alert('Error on posting the review.');  history.back();'</script>";
 }
 ?>

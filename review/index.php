@@ -41,6 +41,9 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
             );
             $first_row = $user_info->fetch_array();
             $nickname = $first_row['user_name'];
+            if ($_SESSION['id'] == $row['user_id']) {
+              print "<button style='width: 30px; height: 30px'><a href='./edit.php'>Edit</a></button>";
+            }
             print "<div>reviewer: $nickname score: $row[score] <br> $row[comment]</div>"; // 리뷰 하나씩 보여줌.
           }
         } else {
