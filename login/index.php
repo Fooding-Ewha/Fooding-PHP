@@ -9,8 +9,6 @@
 	<!-- <link rel="stylesheet" href="/css/main.css"> -->
 </head>
 <body>
- <?php include $_SERVER['DOCUMENT_ROOT'] . '/php/nav.php'; ?>
-
 	<section id="main">
 		<form method="POST" action="login.php">
             <input type="text" name="user_id"></input>

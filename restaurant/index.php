@@ -37,9 +37,9 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
  );
  if ($menu_list->num_rows > 0) {
    while ($row = $menu_list->fetch_array(MYSQLI_ASSOC)) {
-     print "<img src='$row[image]' style='width: 200px; height: 150px;'></img>"; // 이미지
-     print "<h3>$row[name]</h3>";
-     print "<h3>$row[price]</h3>";
+     print "<img src='$row[image]' style='width: 200px; height: 150px;'></img>"; // 메뉴 이미지
+     print "<h3>$row[name]</h3>"; // 메뉴 이름
+     print "<h3>$row[price]</h3>"; // 메뉴 가격
    }
  } else {
    print '<h3>Menu does not exist.</h3>';

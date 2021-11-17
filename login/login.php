@@ -15,8 +15,8 @@ if (
   $user_password == $user_result['password']
 ) {
   $_SESSION['id'] = $user_result['id'];
-  echo "<script>alert('환영합니다.');</script>";
-  echo "<script>location.href='./';</script>";
+  echo "<script>alert('Welcome!');</script>";
+  echo "<script>location.href='/';</script>";
 } else {
   echo "<script>alert('invalid username or password');</script>";
   echo '<script>history.back();</script>';
