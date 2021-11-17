@@ -47,6 +47,18 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
           die('No review written for this restaurant.');
         }
         ?>
+    <form action="./write.php" method="GET">
+      <input type='hidden' name='restaurant_id' value='<?php echo "$restaurant_id"; ?>'/> <!-- 숨어있는 아이-->
+	    <input type="text" name="comment" /> <!--댓글 input 박스-->
+      <select id="score" name="score"> <!--score 드롭다운-->
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+      </select>
+	    <input type="submit" value="Post" />    <!--댓글 post 버튼-->
+    </form>
     </section>
 </body>
 </html>

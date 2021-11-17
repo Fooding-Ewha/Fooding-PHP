@@ -3,7 +3,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
 $user_id = $_POST['user_id'];
 $user_password = $_POST['user_password'];
 $query =
-  "SELECT `id`, `password` from User WHERE `id`='" .
+  "SELECT * from User WHERE `id`='" .
   $user_id .
   "' AND `password`='" .
   $user_password .
@@ -14,7 +14,7 @@ if (
   $user_id == $user_result['id'] &&
   $user_password == $user_result['password']
 ) {
-  $_SESSION['id'] = $user_result['id'];
+  $_SESSION['id'] = $user_result['user_id'];
   echo "<script>alert('Welcome!');</script>";
   echo "<script>location.href='/';</script>";
 } else {
