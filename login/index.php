@@ -10,7 +10,7 @@
 </head>
 <body>
 	<section id="main">
-		<div class="mainContainer">
+		<div class="main-container">
 			<form method="POST" action="login.php">
             	<input type="text" name="user_id"></input>
             	<input type="password" name="user_password"></input>

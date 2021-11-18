@@ -11,10 +11,10 @@ body {
   height: 100%;
 }
 
-.mainContainer {
+.main-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   width: 75vw;
   height: 70vh;
@@ -25,8 +25,28 @@ body {
   overflow-y: auto;
 }
 
-.mainContainer ::-webkit-scrollbar {
+.main-container ::-webkit-scrollbar {
   display: none;
+}
+
+.top-bar {
+  width: 100%;
+  height: 2em;
+  display: flex;
+  align-content: center;
+}
+
+.menu-button {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 3.5em;
+  height: 2em;
+  border: none;
+  background-color: transparent;
+  background-image: url('../public/menuButton.png');
+  background-size: 3.5em 2em;
+  object-fit: contain;
 }
 
 header {
@@ -44,7 +64,7 @@ header {
   margin-bottom: 16px;
 }
 
-.searchBox {
+.search-box {
   background: white;
   border: 1px solid #dddddd;
   border-radius: 2em;
@@ -56,7 +76,7 @@ header {
   align-items: center;
 }
 
-.searchInput {
+.search-input {
   color: black;
   font-size: 1.5em;
   width: 85%;
@@ -64,15 +84,15 @@ header {
   border: none;
 }
 
-.searchInput ::focus {
+.search-input ::focus {
   outline: none;
 }
 
-.searchInput ::placeholder {
+.search-input ::placeholder {
   color: none;
 }
 
-.searchButton {
+.search-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -87,6 +107,27 @@ header {
   margin-right: 15px;
 }
 
-.searchButton ::focus {
+.search-button ::focus {
   outline: none;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 3em;
+}
+
+.top-button {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 5em;
+  height: 3em;
+  border: none;
+  background-color: transparent;
+  background-image: url('../public/topButton.png');
+  background-size: 5em 3em;
+  object-fit: contain;
 }
