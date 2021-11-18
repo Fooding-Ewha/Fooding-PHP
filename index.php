@@ -14,11 +14,7 @@
  include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
  ?>
 
-<section id="main">
-
-	</section>
-</element>
-<div class="main-container">
+<section class="main-container">
 	<div class="top-bar">
 		<button class="menu-button"/>
 	</div>
@@ -32,5 +28,6 @@
 	<footer>
 		<button class="top-button"/>
 	</footer>
+</section>
 </body>
 </html>
