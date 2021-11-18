@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<title>Fooding</title>
 
-	<link rel="stylesheet" href="/css/main.css">
+	<link rel="stylesheet" href="/css/main.css?after">
 </head>
 <body>
  <?php
@@ -18,9 +18,13 @@
 
 	</section>
 </element>
-<form action="/search/search.php" method="GET">
-	<input type="text" name="query" />
-	<input type="submit" value="Search" />
-</form>
+<div class="mainContainer">
+	<header>
+		<img class="logo" src="../public/logo.png"/>
+		<form class="searchBox" action="/search/search.php" method="GET">
+			<input class="searchButton" type="submit" value="" />
+			<input class="searchInput" type="text" name="query" />
+		</form>
+	</header>
 </body>
 </html>
