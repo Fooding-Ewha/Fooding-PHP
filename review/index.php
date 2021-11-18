@@ -42,20 +42,24 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
             );
             $first_row = $user_info->fetch_array();
             $nickname = $first_row['user_name'];
-            if ($_SESSION['id'] == $row['user_id']) {
-              print "<button style='width: 30px; height: 30px;'><a href='./edit.php'>Edit</a></button>"; // edit 버튼
+            if (isset($_SESSION['id']) && $_SESSION['id'] == $row['user_id']) {
+              //"window.open('modifyComment.php', 'payviewer', 'width=1000, height=80, top=240, left=150');"
+              // $onclick_query =
+              print "<button style='width: 30px; height: 30px;' onclick=window.open('edit.php', 'edit-popup', 'width=100, height=100');>Edit</button>"; // edit 버튼
               print "<button style='width: 30px; height: 30px;'><a href='./delete.php?review_id=" .
                 $row['review_id'] .
-                "'>Delete</a></button>"; // delete 버튼
+                "'>Delete</a></button>";
             }
+
+            // delete 버튼
             print "<div>reviewer: $nickname score: $row[score] <br> $row[comment]</div>"; // 리뷰 하나씩 보여줌.
           }
         } else {
           die('No review written for this restaurant.');
         }
         ?>
+  <?php if (isset($_SESSION['id'])) { ?>
     <form action="./write.php" method="GET">
-      <input type='hidden' name='restaurant_id' value='<?php echo "$restaurant_id"; ?>'/> <!-- 숨어있는 아이-->
 	    <input type="text" name="comment" /> <!--댓글 input 박스-->
       <select id="score" name="score"> <!--score 드롭다운-->
             <option value="0">0</option>
@@ -63,9 +67,11 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
+            <option value="5">5</option>
       </select>
 	    <input type="submit" value="Post" />    <!--댓글 post 버튼-->
     </form>
+  <?php } ?>
     </section>
 </body>
 </html>
