@@ -31,7 +31,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
             print "<h3>$row[address]</h3>"; // 식당 주소
           }
         } else {
-          die('Error occured on loading restaurant information.');
+          print 'Error occured on loading restaurant information.';
         }
         if ($result2->num_rows > 0) {
           while ($row = $result2->fetch_array(MYSQLI_ASSOC)) {
@@ -55,7 +55,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
             print "<div>reviewer: $nickname score: $row[score] <br> $row[comment]</div>"; // 리뷰 하나씩 보여줌.
           }
         } else {
-          die('No review written for this restaurant.');
+          print 'No review written for this restaurant.';
         }
         ?>
   <?php if (isset($_SESSION['id'])) { ?>

@@ -5,7 +5,7 @@ $comment = $_GET['comment'];
 $score = $_GET['score'];
 $restaurant_id = $_SESSION['history'];
 
-//$mysqli->query('START TRANSACTION');
+// transaction
 $mysqli->begin_transaction();
 $query1 =
   "INSERT INTO Review (`restaurant_id`, `user_id`, `score`, `comment`)
@@ -22,7 +22,7 @@ $query1 =
 $result1 = $mysqli->query($query1);
 
 if ($result1) {
-  $query2 = 'SELECT AVG(score) AS average FROM Review';
+  $query2 = 'SELECT AVG(score) AS average FROM Review'; // advanced sql # 1 - AVG
   $result2 = $mysqli->query($query2);
 
   $first_row = $result2->fetch_array();
@@ -41,12 +41,12 @@ if ($result1) {
   if ($result3) {
     $mysqli->commit();
   } else {
+    print "<script>alert('Error on posting the review.');  history.back();</script>";
     $mysqli->rollback();
-    print "<script>alert('Error on posting the review.');  history.back();'</script>";
   }
   print "<script>alert('Review Successfully Posted.');  location.href='../review?id=$restaurant_id'</script>";
 } else {
-  $mysqli->rollback;
-  print "<script>alert('Error on posting the review.');  history.back();'</script>";
+  print "<script>alert('Error on posting the review.');  history.back();</script>";
+  $mysqli->rollback();
 }
 ?>
