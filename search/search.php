@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<title>Fooding</title>
 
-	<link rel="stylesheet" href="/css/main.css">
+	<link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
 
