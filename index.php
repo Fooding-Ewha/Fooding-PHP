@@ -19,7 +19,9 @@
 		<button class="menu-button"/>
 	</div>
 	<header>
-		<img class="logo" src="../public/logo.png"/>
+		<a href='/'>
+			<img class="logo" src="../public/logo.png"/>
+		</a>
 		<form class="search-box" action="/search/search.php" method="GET">
 			<input class="search-button" type="submit" value="" />
 			<input class="search-input" type="text" name="query" />

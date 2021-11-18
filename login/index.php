@@ -14,7 +14,9 @@
 				<button class="menu-button"/>
 			</div>
 			<header>
-				<img class="logo" src="../public/logo.png"/>
+				<a href='/'>
+					<img class="logo" src="../public/logo.png"/>
+				</a>
 				<form class="search-box" action="/search/search.php" method="GET">
 					<input class="search-button" type="submit" value="" />
 					<input class="search-input" type="text" name="query" />
@@ -33,11 +35,22 @@
 				</section>
 				<input class="login-button" type="submit" name="submit" value="login"/>
         	</form>
-			<div>Don't have an account? Click <a href='/signup'>here</a> to sign in </div>
+			<div>Don't have an account? Click <button id="open">here</button> to sign in </div>
 			<footer>
 				<button class="top-button"/>
 			</footer>
+			<div class="modal hidden">
+    			<div class="modal-overlay"></div>
+    			<div class="modal-content">
+					<form method="POST" action="../signup/addUser.php">
+            			<input type="text" name="user_id" placeholder="id"/>
+            			<input type="password" name="user_password" placeholder="password"/>
+            			<input type="text" name="user_name" placeholder="nickname"/>
+            			<input type="submit" name="submit"/>
+					</form>
+    			</div>
+ 			</div>
 	</section>
-
+	<script src="login.js"></script>
 </body>
 </html>
