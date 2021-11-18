@@ -24,6 +24,15 @@
 			<input class="search-button" type="submit" value="" />
 			<input class="search-input" type="text" name="query" />
 		</form>
+	<div style="display: flex; flex-direction: row;">
+		<?php
+  $query = 'SELECT * FROM Keyword';
+  $result = $mysqli->query($query);
+  while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+    print "<a href='/search/search.php?keyword=$row[name]' style='font-size: 12px; color: grey; margin: 5px'>$row[name]</a>";
+  }
+  ?>
+  	</div>
 	</header>
 	<footer>
 		<button class="top-button"/>
