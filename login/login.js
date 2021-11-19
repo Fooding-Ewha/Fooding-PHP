@@ -1,9 +1,6 @@
 const openBtn = document.getElementById('open');
 //onModal button
 
-const closeBtn = document.getElementById('close');
-//offModal button
-
 const modalContent = document.querySelector('.modal-content');
 
 const modal = document.querySelector('.modal');
@@ -24,9 +21,6 @@ openBtn.addEventListener('click', openModal);
 //onModal
 
 modalContent.addEventListener('click', openModal);
-
-closeBtn.addEventListener('click', closeModal);
-//모달창 내부의 닫기 버튼
 
 overlay.addEventListener('click', closeModal);
 //모달창 영역 밖

@@ -7,6 +7,8 @@
 	<title>Fooding</title>
 
 	<link rel="stylesheet" href="/css/main.css?after">
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css?after">
+	<!-- <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css?after"> -->
 </head>
 <body>
  <?php
@@ -30,15 +32,36 @@
 		<?php
   $query = 'SELECT * FROM Keyword';
   $result = $mysqli->query($query);
+
   while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
     print "<a href='/search/search.php?keyword=$row[name]' style='font-size: 12px; color: grey; margin: 5px'>$row[name]</a>";
   }
   ?>
   	</div>
 	</header>
+	<div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+        <div class="swiper-slide">Slide 6</div>
+        <div class="swiper-slide">Slide 7</div>
+        <div class="swiper-slide">Slide 8</div>
+        <div class="swiper-slide">Slide 9</div>
+      </div>
+      <!-- <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div> -->
+      <div class="swiper-pagination"></div>
+    </div>
+
 	<footer>
 		<button class="top-button"/>
 	</footer>
 </section>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="slider.js"></script>
+
 </body>
 </html>
