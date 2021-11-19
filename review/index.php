@@ -43,13 +43,36 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
             );
             $first_row = $user_info->fetch_array();
             $nickname = $first_row['user_name'];
+
             if (isset($_SESSION['id']) && $_SESSION['id'] == $row['user_id']) {
-              //"window.open('modifyComment.php', 'payviewer', 'width=1000, height=80, top=240, left=150');"
-              // $onclick_query =
-              print "<button id='edit' value=$row[review_id] style='width: 30px; height: 30px;'>Edit</button>"; // edit 버튼
-              print "<button style='width: 30px; height: 30px;'><a href='./delete.php?review_id=" .
-                $row['review_id'] .
-                "'>Delete</a></button>";
+
+              $original_comment = $row['comment'];
+              $original_score = $row['score'];
+              ?>
+              <button id = 'open' style='width: 30px; height: 30px;'>Edit</button>  <!-- 자기가 달았던 코멘트에만 보이는 Edit 버튼이랑 Delete 버튼 -->
+              <button style='width: 30px; height: 30px;'><a href='./delete.php?review_id=<?php echo "
+                $row[review_id]"; ?>'>Delete</a></button>
+              
+      <div class="modal hidden">  <!-- Edit 버튼 누르면 나오는 모달 -->
+    			<div class="modal-overlay"></div>
+    			<div class="modal-content">
+          <form action='./edit.php' method='GET'>
+                     <input type='text' name='edit_comment' placeholder='comment' value=<?php echo "$original_comment"; ?>>
+                      <select id='score' name='edit_score'> 
+                        <option value='0'>0</option>
+                        <option value='1'>1</option>
+                        <option value='2'>2</option>
+                        <option value='3'>3</option>
+                        <option value='4'>4</option>
+                        <option value='5'>5</option>
+                      </select>
+                      <input type='submit' name='submit' value="Edit"> 
+            </form>
+    			  </div>
+ 			  </div>
+             
+                
+              <?php
             }
 
             // delete 버튼
@@ -60,7 +83,6 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
         }
         ?>
   <?php if (isset($_SESSION['id'])) { ?>
-    <button onclick="window.open('edit.php', 'edit-popup', 'width=1000, height=1000')">클릭해봐</button>
     <form action="./write.php" method="GET">
 	    <input type="text" name="comment" /> <!--댓글 input 박스-->
       <select id="score" name="score"> <!--score 드롭다운-->
@@ -75,5 +97,6 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
     </form>
   <?php } ?>
     </section>
+    <script src="review.js"></script>
 </body>
 </html>
