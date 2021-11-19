@@ -182,18 +182,77 @@ footer {
 .modal-content {
   width: 10%;
   background-color: white;
+  width: 300px;
+  height: 400px;
   text-align: center;
   padding: 50px 100px;
   position: relative;
-  border-radius: 10px;
+  border-radius: 50px;
+  background-color: rgb(245, 229, 186);
   top: 0px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
+h4 {
+  margin: 0;
+}
+.modal-input {
+  border: solid orange;
+  border-width: 0px 0px 1px 0px;
+  background-color: transparent;
+  margin-bottom: 20px;
+  position: relative;
+  width: 200px;
+  padding: 10px;
+}
+
+.modal-input-icon {
+  position: absolute;
+  top: 200px;
+  left: 100px;
+  width: 15px;
+  height: 15px;
+  max-width: 100%;
+  height: auto !important;
+}
+
+img {
+  max-width: 100%;
+  height: auto !important;
+}
+
+.modal-button {
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  width: 150px;
+  height: 80px;
+  margin: 10px;
+  padding: 10px;
+  color: white;
+  background-color: rgb(94, 87, 65);
+}
+
+.modal-button :active {
+  box-shadow: none;
+}
 .hidden {
   display: none;
 }
 
+.signUp {
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  margin: 0;
+}
+
+.logo-in-modal {
+  width: 100px;
+  height: 100px;
+}
 /* slider */
 .swiper {
   width: 1000px;

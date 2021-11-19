@@ -39,17 +39,22 @@
 			<footer>
 				<button class="top-button"/>
 			</footer>
-			<div class="modal hidden">
+			<section class="modal hidden">
     			<div class="modal-overlay"></div>
     			<div class="modal-content">
-					<form method="POST" action="../signup/addUser.php">
-            			<input type="text" name="user_id" placeholder="id"/>
-            			<input type="password" name="user_password" placeholder="password"/>
-            			<input type="text" name="user_name" placeholder="nickname"/>
-            			<input type="submit" name="submit"/>
+					<form class="signUp" method="POST" action="../signup/addUser.php">
+						<img class="logo-in-modal" src="../public/logo.png"/>
+						<h4>fooding</h4>
+						<h5>CREATE A NEW ACCOUNT</h5>
+            			<input class="modal-input" type="text" name="user_id" placeholder="id">
+							<!-- <img class="modal-input-icon" src="../public/lock.png"/> -->
+						</input>
+            			<input class="modal-input" type="password" name="user_password" placeholder="password"/>
+            			<input class="modal-input" type="text" name="user_name" placeholder="nickname"/>
+           	 			<input class="modal-button" type="submit" name="submit" value="Sign up"/>
 					</form>
     			</div>
- 			</div>
+			</section>
 	</section>
 	<script src="login.js"></script>
 </body>
