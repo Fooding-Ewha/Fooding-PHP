@@ -5,7 +5,12 @@ $comment = $_GET['comment'];
 $score = $_GET['score'];
 $restaurant_id = $_SESSION['history'];
 
-$exist_check = "SELECT * FROM Review WHERE `user_id` = '" . $user_id . "';";
+$exist_check =
+  "SELECT * FROM Review WHERE `user_id` = '" .
+  $user_id .
+  "' AND `restaurant_id` = '" .
+  $restaurant_id .
+  "';";
 $if_exist = $mysqli->query($exist_check);
 if ($if_exist->num_rows > 0) {
   print "<script>alert('You already posted a review.');  location.href='../review?id=$restaurant_id'</script>";

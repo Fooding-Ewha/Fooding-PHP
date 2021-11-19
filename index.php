@@ -48,10 +48,10 @@
    $result2 = $mysqli->query($query2);
 
    while ($row = $result2->fetch_array(MYSQLI_ASSOC)) {
-     $restaurant_id =
-       $row[
-         'restaurant_id'
-       ]; ?> <img class='swiper-slide' src=<?php echo "$row[image]"; ?> style='object-fit:cover;' onclick="location.href='/restaurant?id=<?php echo $restaurant_id; ?>'"></img>
+
+     $restaurant_id = $row['restaurant_id'];
+     $image = $row['image'];
+     ?> <img class='swiper-slide' src=<?php echo "$image"; ?> style='object-fit:cover;' onclick="location.href='/restaurant?id=<?php echo $restaurant_id; ?>'"></img>
    <?php
    }
    ?>

@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php session_start();
+include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
+?>
 
 <!DOCTYPE html>
 <html>
@@ -11,6 +13,22 @@
 <body>
    
 <section id="main" style="display: flex; flex-direction: column;">
+<h4>Current Statistics</h4>
+<?php
+$query1 =
+  'SELECT c.`name`, AVG(score) AS average FROM Restaurant r JOIN Category c ON r.category_id = c.category_id GROUP BY r.category_id ORDER BY average DESC;';
+$result = $mysqli->query($query1);
+$first_row = $result->fetch_array();
+$popular_category = $first_row['name'];
+
+echo "most popular category : $popular_category";
+
+$query2 =
+  'SELECT MAX(average)FROM (SELECT AVG(score) AS average FROM Restaurant GROUP BY category_id) AS max_average;';
+$result = $mysqli->query($query2);
+$first_row = $result->fetch_array();
+?>
+
  <?php
  include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
  $query_string = $_GET['value'];
