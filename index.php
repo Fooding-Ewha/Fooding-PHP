@@ -6,9 +6,12 @@
 	<meta charset="utf-8">
 	<title>Fooding</title>
 
-	<link rel="stylesheet" href="/css/main.css?after">
-	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css?after">
-	<!-- <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css?after"> -->
+	<link rel="stylesheet" type="text/css" href="/css/main.css?after">
+	<style>
+   		 @import url('https://unpkg.com/swiper/swiper-bundle.min.css?after');
+	</style>
+	<!--<link rel="stylesheet" type="text/css" href="https://unpkg.com/swiper/swiper-bundle.min.css?after"> -- >
+	
 </head>
 <body>
  <?php
