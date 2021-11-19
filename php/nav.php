@@ -1,7 +1,7 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc'; ?>
 
-
+<link rel="stylesheet" type="text/css" href="/css/main.css?after">
 <nav class="nav-bar" style="position: absolute; left: 10px; top: 10px;">
 <div class="container" style="display: flex; flex-direction: column; ">
 

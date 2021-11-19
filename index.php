@@ -6,8 +6,10 @@
 	<meta charset="utf-8">
 	<title>Fooding</title>
 
-	<link rel="stylesheet" href="/css/main.css?after">
-	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css?after">
+	<link rel="stylesheet" type="text/css" href="/css/main.css?after">
+	<style>
+   		 @import url('https://unpkg.com/swiper/swiper-bundle.min.css?after');
+	</style>	
 </head>
 <body>
  <?php
@@ -31,6 +33,8 @@
 		<?php
   $query = 'SELECT * FROM Keyword';
   $result = $mysqli->query($query);
+  echo mysqli->error;
+  echo $result;
 
   while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
     print "<a href='/search/search.php?keyword=$row[name]' style='font-size: 12px; color: grey; margin: 5px'>$row[name]</a>";

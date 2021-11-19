@@ -13,6 +13,7 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
 if (isset($_GET['query'])) {
+  $query = $_GET['query'];
   ($result = $mysqli->query(
     "SELECT r.name as `name`, r.address as `address` FROM Restaurant r join Category c on r.category_id=c.category_id WHERE r.name LIKE '%" .
       $query .

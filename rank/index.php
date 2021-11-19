@@ -9,7 +9,33 @@
 	<link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-   
+
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/php/nav.php'; ?>
+<section class="main-container">
+	<div class="top-bar">
+		<button class="menu-button"/>
+	</div>
+	<header>
+		<a href='/'>
+			<img class="logo" src="../public/logo.png"/>
+		</a>
+		<form class="search-box" action="/search/search.php" method="GET">
+			<input class="search-button" type="submit" value="" />
+			<input class="search-input" type="text" name="query" />
+		</form>
+	<div style="display: flex; flex-direction: row;">
+		<?php $query = 'SELECT * FROM Keyword';
+// echo mysqli->error;
+// $result = $mysqli->query($query);
+// echo $result;
+
+// while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+//   print "<a href='/search/search.php?keyword=$row[name]' style='font-size: 12px; color: grey; margin: 5px'>$row[name]</a>";
+// }
+//
+?>
+  	</div>
+	</header>  
 <section id="main" style="display: flex; flex-direction: column;">
  <?php
  include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
@@ -33,7 +59,7 @@
  }
  ?>
  <!--여기서부터 그리드 아이템-->
-  <div class="container" style="display: grid; grid-template-columns: 300px 300px; padding: 10px;">
+  <div class="container" style="display: grid; grid-template-columns: 400px 300px; padding: 10px;">
   <?php if ($restaurant_list->num_rows > 0) {
     while ($row = $restaurant_list->fetch_array(MYSQLI_ASSOC)) {
       $onclick_query = "location.href='/restaurant?name=$row[restaurant_id];";
@@ -44,5 +70,9 @@
     echo 'No Restaurant exists for the clicked value';
   } ?></div>
   </section>
+  <footer>
+		<button class="top-button"/>
+	</footer>
+</section>
 </body>
 </html>
