@@ -9,9 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="/css/main.css?after">
 	<style>
    		 @import url('https://unpkg.com/swiper/swiper-bundle.min.css?after');
-	</style>
-	<!--<link rel="stylesheet" type="text/css" href="https://unpkg.com/swiper/swiper-bundle.min.css?after"> -- >
-	
+	</style>	
 </head>
 <body>
  <?php
