@@ -10,6 +10,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
 	<link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
+
     <section id="main" style="display: flex; flex-direction: column;">
         <?php
         $restaurant_id = $_GET['id'];
@@ -45,7 +46,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
             if (isset($_SESSION['id']) && $_SESSION['id'] == $row['user_id']) {
               //"window.open('modifyComment.php', 'payviewer', 'width=1000, height=80, top=240, left=150');"
               // $onclick_query =
-              print "<button style='width: 30px; height: 30px;' onclick=window.open('edit.php', 'edit-popup', 'width=100, height=100');>Edit</button>"; // edit 버튼
+              print "<button id='edit' value=$row[review_id] style='width: 30px; height: 30px;'>Edit</button>"; // edit 버튼
               print "<button style='width: 30px; height: 30px;'><a href='./delete.php?review_id=" .
                 $row['review_id'] .
                 "'>Delete</a></button>";
@@ -59,6 +60,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
         }
         ?>
   <?php if (isset($_SESSION['id'])) { ?>
+    <button onclick="window.open('edit.php', 'edit-popup', 'width=1000, height=1000')">클릭해봐</button>
     <form action="./write.php" method="GET">
 	    <input type="text" name="comment" /> <!--댓글 input 박스-->
       <select id="score" name="score"> <!--score 드롭다운-->

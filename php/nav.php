@@ -7,6 +7,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc'; ?>
 
 <?php if (isset($_SESSION['id'])) {
   print "<a href='/logout'>Logout</a>";
+  print '<a href=/withdraw>Withdraw</a>';
 } else {
   print "<a href='/login'>Login</a>";
   print "<a href='/signup'>SignUp</a>";

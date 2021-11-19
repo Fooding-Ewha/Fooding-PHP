@@ -3,7 +3,10 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
 $user_id = $_SESSION['id'];
 $review_id = $_GET['review_id'];
 $restaurant_id = $_SESSION['history'];
+
+// transaction
 $mysqli->begin_transaction();
+
 $query1 =
   "DELETE FROM Review
   WHERE review_id = '" .
