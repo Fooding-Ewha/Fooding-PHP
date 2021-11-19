@@ -15,12 +15,11 @@ $user_info = $result->fetch_array();
 	<!-- <link rel="stylesheet" href="/css/main.css"> -->
 </head>
 <body>
-
 	<section id="main">
 		<form method="POST" action="changeInfo.php">
-            <input type="text" name="user_id" placeholder="id" value=<?php echo "$user_info[id]"; ?>></input>
-            <input type="password" name="user_password" placeholder="password"></input>
-            <input type ="password" name = "password_check" placeholder="password check"></input>
+            <input type="text" name="user_id" placeholder="id" value=<?php echo "$user_info[id]"; ?> disabled=true></input>
+            <input type="password" name="original_password" placeholder="original password"></input>
+            <input type ="password" name = "new_password" placeholder="new password ( Type original one if there's no change )" style = 'width: 400px;'></input>
             <input type="text" name="user_name" placeholder="nickname" value=<?php echo "$user_info[user_name]"; ?>></input>
             <input type="submit" name="submit"></input>
         </form>

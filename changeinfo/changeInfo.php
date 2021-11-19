@@ -1,33 +1,36 @@
 <?php session_start();
 include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
-$id = $_POST['user_id'];
-$password = $_POST['user_password'];
-$password_check = $_POST['password_check'];
+$id = $_SESSION['id'];
+$original_password = $_POST['original_password'];
+$new_password = $_POST['new_password'];
 $nickname = $_POST['user_name'];
-//$sql_user = "SELECT * FROM User WHERE `id`='" . $id . "'";
-//$sql_nickname = "SELECT * FROM User WHERE `user_name`='" . $nickname . "'";
-//$res_user = $mysqli->query($sql_user);
-//$res_nickname = $mysqli->query($sql_nickname);
-/*
-if ($res_user->num_rows > 0) {
-  echo "<script>alert('User Id Already Taken!');</script>";
-  echo '<script>history.back();</script>';
-} elseif ($res_nickname->num_rows > 0) {
-  echo "<script>alert('Nickname Already Taken!');</script>";
-  echo '<script>history.back();</script>';
-} else {
-  $query =
-    'INSERT INTO User (`id`, `password`, `user_name`)' .
-    " VALUES ('" .
-    $id .
-    "','" .
-    $password .
-    "','" .
+
+$query1 = "SELECT * FROM User WHERE `user_id` = '" . $id . "' LIMIT 1;";
+$result1 = $mysqli->query($query1);
+$original_info = $result1->fetch_array();
+if ($original_password != $original_info['password']) {
+  echo "<script>alert('Original Password is wrong!'); history.back();</script>";
+  return;
+} elseif (
+  $original_info['password'] != $new_password ||
+  $original_info['user_name'] != $nickname
+) {
+  $query2 =
+    "UPDATE User SET `password` = '" .
+    $new_password .
+    "', `user_name` = '" .
     $nickname .
-    "')";
-  $mysqli->query($query);
-  echo "<script>alert('Sign Up Successfully Completed!');</script>";
-  echo "<script>location.href='../login';</script>";
+    "' WHERE `user_id` = '" .
+    $id .
+    "';";
+  $result2 = $mysqli->query($query2);
+} else {
+  echo "<script>alert('There is no information change!'); history.back();</script>";
+  return;
 }
-*/
+
+if ($result2) {
+  echo "<script>alert('User Information successfully updated!'); location.href = '/';</script>";
+}
+
 ?>
