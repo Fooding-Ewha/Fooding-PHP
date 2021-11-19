@@ -31,10 +31,10 @@
 		</form>
 	<div style="display: flex; flex-direction: row;">
 		<?php
-  $query = 'SELECT * FROM Keyword';
-  $result = $mysqli->query($query);
+  $query1 = 'SELECT * FROM Keyword';
+  $result1 = $mysqli->query($query1);
 
-  while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+  while ($row = $result1->fetch_array(MYSQLI_ASSOC)) {
     print "<a href='/search/search.php?keyword=$row[name]' style='font-size: 12px; color: grey; margin: 5px'>$row[name]</a>";
   }
   ?>
@@ -42,15 +42,13 @@
 	</header>
 	<div class="swiper mySwiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide">Slide 1</div>
-        <div class="swiper-slide">Slide 2</div>
-        <div class="swiper-slide">Slide 3</div>
-        <div class="swiper-slide">Slide 4</div>
-        <div class="swiper-slide">Slide 5</div>
-        <div class="swiper-slide">Slide 6</div>
-        <div class="swiper-slide">Slide 7</div>
-        <div class="swiper-slide">Slide 8</div>
-        <div class="swiper-slide">Slide 9</div>
+	  <?php
+   $query2 = 'SELECT `image` FROM Restaurant ORDER BY `score` DESC LIMIT 9';
+   $result2 = $mysqli->query($query2);
+   while ($row = $result2->fetch_array(MYSQLI_ASSOC)) {
+     print " <img class='swiper-slide' src='$row[image]'></img>";
+   }
+   ?>
       </div>
       <!-- <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div> -->

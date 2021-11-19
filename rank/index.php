@@ -26,7 +26,7 @@
  } elseif (isset($_GET['category'])) {
    $category = $_GET['category'];
    $restaurant_list = $mysqli->query(
-     "SELECT *, rank() OVER(order by score desc) AS ranking FROM Restaurant WHERE category_id='" .
+     "SELECT *, dense_rank() OVER(order by score desc) AS ranking FROM Restaurant WHERE category_id='" .
        $category .
        "'"
    );

@@ -36,6 +36,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
         }
         if ($result2->num_rows > 0) {
           while ($row = $result2->fetch_array(MYSQLI_ASSOC)) {
+
             $user_info = $mysqli->query(
               "SELECT `user_name` FROM User WHERE `user_id`='" .
                 $row['user_id'] .
@@ -66,7 +67,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
                         <option value='4'>4</option>
                         <option value='5'>5</option>
                       </select>
-                      <input type='submit' name='submit' value="Edit"> 
+                      <input type='submit' name='submit' value="Edit"/> 
             </form>
     			  </div>
  			  </div>
@@ -74,9 +75,10 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
                 
               <?php
             }
-
-            // delete 버튼
-            print "<div>reviewer: $nickname score: $row[score] <br> $row[comment]</div>"; // 리뷰 하나씩 보여줌.
+            ?>
+           
+            <div>reviewer: <?php echo "$nickname"; ?> score: <?php echo "$row[score]"; ?> <br> <?php echo "$row[comment]"; ?></div><!-- 리뷰 하나씩 보여줌. -->
+            <?php
           }
         } else {
           print 'No review written for this restaurant.';
