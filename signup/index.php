@@ -6,7 +6,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Fooding</title>
+	<title>Sign Up</title>
 
 	<!-- <link rel="stylesheet" href="/css/main.css"> -->
 </head>
