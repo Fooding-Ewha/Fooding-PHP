@@ -43,10 +43,16 @@
 	<div class="swiper mySwiper">
       <div class="swiper-wrapper">
 	  <?php
-   $query2 = 'SELECT `image` FROM Restaurant ORDER BY `score` DESC LIMIT 9';
+   $query2 =
+     'SELECT `image`, `restaurant_id` FROM Restaurant ORDER BY `score` DESC LIMIT 9';
    $result2 = $mysqli->query($query2);
+
    while ($row = $result2->fetch_array(MYSQLI_ASSOC)) {
-     print " <img class='swiper-slide' src='$row[image]'></img>";
+     $restaurant_id =
+       $row[
+         'restaurant_id'
+       ]; ?> <img class='swiper-slide' src=<?php echo "$row[image]"; ?> style='object-fit:cover;' onclick="location.href='/restaurant?id=<?php echo $restaurant_id; ?>'"></img>
+   <?php
    }
    ?>
       </div>
