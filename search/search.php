@@ -15,11 +15,13 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
 if (isset($_GET['query'])) {
   $query = $_GET['query'];
   ($result = $mysqli->query(
-    "SELECT r.name as `name`, r.address as `address`, r.image as `image` FROM Restaurant r join Category c on r.category_id=c.category_id WHERE r.name LIKE '%" .
+    "SELECT r.name as `name`, r.address as `address`, r.image as `image`, c.name AS `category` FROM Restaurant r join Category c on r.category_id=c.category_id join Region g ON r.region_id = g.region_id WHERE r.name LIKE '%" .
       $query .
       "%' OR c.name LIKE '%" .
       $query .
-      "%'"
+      "%' OR g.name LIKE '%" .
+      $query .
+      "%';"
   )) or die($mysqli->error);
 } elseif (isset($_GET['keyword'])) {
   $keyword = $_GET['keyword'];
