@@ -16,7 +16,7 @@
 
 include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc'; ?>
 
-<section class="main-container" style="positon:relative;">
+<section class="main-container" style="position:relative;">
 	<?php include $_SERVER['DOCUMENT_ROOT'] . '/php/nav.php'; ?>
 	<header>
 		<a href='/'>
