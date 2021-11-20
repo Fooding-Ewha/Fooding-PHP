@@ -37,7 +37,7 @@ if ($result->num_rows > 0) {
   }
 
   while ($row = $result->fetch_array(MYSQLI_ASSOC)) { ?>
-    <img src=<?php echo "$row[image]"; ?> style='width: 140px; height: 140px; border-radius: 50%; margin-right: 50px;'></img>
+    <img src=<?php echo "$row[image]"; ?> style='width: 140px; height: 140px; border-radius: 50%; margin-right: 50px;'></img> <!--레스토랑 이미지랑 텍스트 하나씩 보여줌-->
     <h3><?php echo "$row[name]"; ?><br><?php echo "$row[address]"; ?></h3>;
     <?php }
 } else {
