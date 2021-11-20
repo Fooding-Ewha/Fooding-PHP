@@ -12,9 +12,7 @@
 	</style>	
 </head>
 <body>
- <?php //  include $_SERVER['DOCUMENT_ROOT'] . '/php/nav.php';
-
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc'; ?>
+ <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc'; ?>
 
 <section class="main-container" style="positon:relative;">
 	<?php include $_SERVER['DOCUMENT_ROOT'] . '/php/nav.php'; ?>
@@ -55,6 +53,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc'; ?>
       </div>
       <div class="swiper-pagination"></div>
     </div>
+	
 
 	<footer>
 		<button class="top-button"/>

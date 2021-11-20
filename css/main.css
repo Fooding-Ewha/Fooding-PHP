@@ -26,7 +26,7 @@ form {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 75vw;
+  width: 70vw;
   height: 730px;
   padding: 20px;
   background-color: #fbf9f6;
@@ -343,14 +343,13 @@ j h3 {
 }
 
 .side-bar {
-  width: 60px;
+  width: 3.5em;
   height: 100%;
-  margin-right: 20px;
 }
 
 .side-bar-button {
-  width: 60px;
-  height: 60px;
+  width: 3.5em;
+  height: 3.5em;
   background-color: transparent;
   border: none;
 }
@@ -362,7 +361,8 @@ j h3 {
   align-items: center;
   width: 1500px;
   height: 100px;
-  /* overflow-y: auto; */
+  overflow-y: scroll;
+  margin-left: 20px;
   -ms-overflow-style: none;
 }
 
@@ -375,5 +375,24 @@ j h3 {
   height: 500px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
+  align-content: center;
+  margin-bottom: 30px;
+}
+
+.res-detail-page {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.res-menu-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
 }
