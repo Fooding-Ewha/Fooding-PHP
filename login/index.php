@@ -10,9 +10,7 @@
 </head>
 <body>
 		<section class="main-container">
-			<div class="top-bar">
-				<button class="menu-button"/>
-			</div>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . '/php/nav.php'; ?>
 			<header>
 				<a href='/'>
 					<img class="logo" src="../public/logo.png"/>

@@ -12,15 +12,12 @@
 	</style>	
 </head>
 <body>
- <?php
- include $_SERVER['DOCUMENT_ROOT'] . '/php/nav.php';
- include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
- ?>
+ <?php //  include $_SERVER['DOCUMENT_ROOT'] . '/php/nav.php';
 
-<section class="main-container">
-	<div class="top-bar">
-		<button class="menu-button"/>
-	</div>
+include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc'; ?>
+
+<section class="main-container" style="positon:relative;">
+	<?php include $_SERVER['DOCUMENT_ROOT'] . '/php/nav.php'; ?>
 	<header>
 		<a href='/'>
 			<img class="logo" src="../public/logo.png"/>

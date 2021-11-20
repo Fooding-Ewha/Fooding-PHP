@@ -27,13 +27,14 @@ form {
   justify-content: space-between;
   align-items: center;
   width: 75vw;
-  height: 75vh;
-  padding: 1%;
+  height: 730px;
+  padding: 20px;
   background-color: #fbf9f6;
   border-radius: 50px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
   overflow-y: hidden;
   overflow-x: hidden;
+  position: relative;
 }
 
 .top-bar {
@@ -300,19 +301,30 @@ img {
 
 .nav-bar {
   position: absolute;
-  top: 125px;
-  left: 235px;
-  height: 70vh;
+  top: 0px;
+  left: 0px;
+  height: 100%;
   width: 200px;
   border-radius: 50px;
   background-color: rgba(255, 242, 205, 0.5);
   overflow-y: auto;
-  -ms-overflow-style: none; /* IE and Edge */
+  -ms-overflow-style: none;
   scrollbar-width: none;
+  padding: 10px;
 }
-.nav-bar ::-webkit-scrollbar {
+.nav-bar :-webkit-scrollbar {
   display: none;
 }
+
+.outside {
+  width: 90%;
+  height: 100%;
+  background-color: transparent;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
 .container {
   margin: 10px;
 }
@@ -331,9 +343,9 @@ j h3 {
 }
 
 .side-bar {
-  width: 40px;
+  width: 60px;
   height: 100%;
-  /* padding: 10px; */
+  margin-right: 20px;
 }
 
 .side-bar-button {
@@ -356,4 +368,12 @@ j h3 {
 
 .res-detail-container::-webkit-scrollbar {
   display: none;
+}
+
+.res-image-container {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }

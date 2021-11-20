@@ -11,12 +11,8 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
 	<link rel="stylesheet" href="../css/main.css?after">
 </head>
 <body>
-
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/php/nav.php'; ?>
 <section class="main-container">
-	<div class="top-bar">
-		<button class="menu-button"/>
-	</div>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/php/nav.php'; ?>
 	<header>
 		<a href='/'>
 			<img class="logo" src="../public/logo.png"/>
@@ -60,7 +56,7 @@ $first_row = $result->fetch_array();
  <?php
  include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
  $query_string = $_GET['value'];
- print "<div style='display: flex;'><h3 style='margin:10px; margin-right: 0px;'>Ranking for</h3><h3 style='color: #efb43e; margin:10px;'>$query_string</h3></div>"; // 위에 나오는 Ranking for ~ 문구
+ print "<div style='display: flex;'><h3 style='margin:10px; margin-right: '>Ranking for</h3><h3 style='color: #efb43e; margin:10px;'>$query_string</h3></div>"; // 위에 나오는 Ranking for ~ 문구
  if (isset($_GET['region'])) {
    $region = $_GET['region'];
    $restaurant_list = $mysqli->query(

@@ -1,9 +1,11 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc'; ?>
-
+<div class="top-bar">
+		<button class="menu-button" onclick="openMenu();" id='menuBtn'/>
+	</div>
 <link rel="stylesheet" type="text/css" href="/css/main.css?after">
-<nav class="nav-bar" style="position: absolute; left: 10px; top: 10px;">
-<div class="container" style="display: flex; flex-direction: column; ">
+<nav class="nav-bar hidden">
+<div class="container" style="display: flex; flex-direction: column; padding: 15px;">
 
 <?php if (isset($_SESSION['id'])) {
   print "<a href='/logout'>Logout</a>";
@@ -36,3 +38,6 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc'; ?>
  ?>
    </div>
    </nav>
+   <div class='outside' onclick='closeMenu();'>
+</div>
+   <script defer src="../php/nav.js"></script>
