@@ -33,10 +33,8 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
   ?>
   	</div>
 	</header> 
-<section class="scroll-container" id="main" style="display: flex; flex-direction: column;">
-<h3></h3>
-<h1></h1>
-<h1></h1> <!--임시로-->
+<section class="scroll-container" id="main">
+<div style="width:100%; height: 100%; display: flex; flex-direction: column; align-items: center;">
 <h4>Current Statistics</h4>
 <?php
 $query1 =
@@ -122,6 +120,7 @@ echo "most popular restaurant recommended : $popular_restaurant_name ( score : $
   <footer>
 		<button class="top-button"/>
 	</footer>
+  </div>
 </section>
 </body>
 </html>
