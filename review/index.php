@@ -10,7 +10,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
 	<link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-
+<section class="main-container">
     <section id="main" style="display: flex; flex-direction: column;">
         <?php
         $restaurant_id = $_GET['id'];
@@ -99,6 +99,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
     </form>
   <?php } ?>
     </section>
+  </section>
     <script src="review.js"></script>
 </body>
 </html>

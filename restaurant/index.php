@@ -8,11 +8,26 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
 	<meta charset="utf-8">
 	<title>Fooding</title>
 
-	<!--<link rel="stylesheet" href="/css/main.css">-->
+	<link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
-   
-<section id="main" style="display: flex; flex-direction: column;">
+<section class="main-container" style="flex-direction: row; justify-content:flex-start;">
+  <div class="side-bar">
+      <button class="side-bar-button"style="height: 30px;">
+        <img src='../public/menuButton.png'/>
+      </button>
+    <a href='/'>
+      <button class="side-bar-button">
+        <img src='../public/logo.png'/>
+      </button>
+  </a>
+  <a href='javascript:history.back()'>
+    <button class="side-bar-button">
+      <img src='../public/backButton.png'/>
+    </button>
+  </a>
+  </div>
+<section class='res-detail-container' id="main">
 
  <?php
  $restaurant_id = $_GET['id'];
@@ -48,5 +63,6 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
  }
  ?>
   </section>
+</section>
 </body>
 </html>
