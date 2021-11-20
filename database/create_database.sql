@@ -1,0 +1,2 @@
+CREATE  DATABASE team18;
+USE team18;

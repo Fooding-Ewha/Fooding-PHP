@@ -13,7 +13,6 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc'; ?>
   print '<a href=/changeinfo>Change User Information</a>';
 } else {
   print "<a href='/login'>Login</a>";
-  print "<a href='/signup'>SignUp</a>";
 } ?>
 <h3>Region</h3>
 	<?php

@@ -38,8 +38,8 @@
 	<div class="swiper mySwiper">
       <div class="swiper-wrapper">
 	  <?php
-   $query2 =
-     'SELECT `name`,`image`, `restaurant_id`, MAX(score) OVER (ORDER BY `score` DESC ROWS BETWEEN 4 PRECEDING AND 4 FOLLOWING) AS max_score FROM Restaurant LIMIT 9;'; # advanced sql # 3 - windowing
+   $query2 = 'SELECT `name`,`image`, `restaurant_id`, AVG(score) OVER ( ROWS BETWEEN 4 PRECEDING AND 4 FOLLOWING) 
+	 AS avg_score FROM Restaurant  ORDER BY avg_score DESC LIMIT 9;'; # advanced sql # 3 - windowing
    $result2 = $mysqli->query($query2);
 
    while ($row = $result2->fetch_array(MYSQLI_ASSOC)) {
