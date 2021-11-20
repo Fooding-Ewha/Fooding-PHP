@@ -38,6 +38,6 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc'; ?>
  ?>
    </div>
    </nav>
-   <div class='outside' onclick='closeMenu();'>
+   <div class='outside hidden' onclick='closeMenu();'>
 </div>
    <script defer src="../php/nav.js"></script>
