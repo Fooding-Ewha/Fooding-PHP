@@ -37,7 +37,7 @@ if ($result1) {
     print "<script>alert('Error on posting the review.');  history.back();</script>";
     $mysqli->rollback();
   }
-  print "<script>alert('Review Successfully Posted.');  location.href='../review?id=$restaurant_id'</script>";
+  print "<script>alert('Review Deleted.');  location.href='../review?id=$restaurant_id'</script>";
 } else {
   print "<script>alert('Error on posting the review.');  history.back();</script>";
   $mysqli->rollback();
