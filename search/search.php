@@ -54,7 +54,7 @@ if ($result->num_rows > 0) {
 if (isset($_GET['query'])) {
   $query = $_GET['query'];
   ($result = $mysqli->query(
-    "SELECT r.name as `name`, r.address as `address`, r.image as `image`, c.name AS `category` FROM Restaurant r join Category c on r.category_id=c.category_id join Region g ON r.region_id = g.region_id WHERE r.name LIKE '%" .
+    "SELECT r.restaurant_id as `restaurant_id`, r.name as `name`, r.address as `address`, r.image as `image`, c.name AS `category` FROM Restaurant r join Category c on r.category_id=c.category_id join Region g ON r.region_id = g.region_id WHERE r.name LIKE '%" .
       $query .
       "%' OR c.name LIKE '%" .
       $query .
@@ -65,7 +65,7 @@ if (isset($_GET['query'])) {
 } elseif (isset($_GET['keyword'])) {
   $keyword = $_GET['keyword'];
   ($result = $mysqli->query(
-    "SELECT r.name as `name`, r.address as `address`, r.image as `image` FROM Restaurant r join Keyword k on r.keyword_id=k.keyword_id WHERE k.name LIKE '%" .
+    "SELECT r.restaurant_id as `restaurant_id`, r.name as `name`, r.address as `address`, r.image as `image` FROM Restaurant r join Keyword k on r.keyword_id=k.keyword_id WHERE k.name LIKE '%" .
       $keyword .
       "%'"
   )) or die($mysqli->error);
@@ -76,7 +76,9 @@ if ($result->num_rows > 0) {
   box-sizing: border-box; height: 160px; margin-top: 15px;margin-bottom: 15px; padding: 15px;border-radius: 20px; margin-left: 20px; margin-right: 20px;background-color: #fcfaf6; box-shadow: 0px 1px 30px rgba(145, 145, 145, 0.2); display: flex;'>
     <img src=<?php echo "$row[image]"; ?> style='width: 140px; height: 140px; border-radius: 50%; margin-right: 50px; margin-left: 10px;'></img> <!--레스토랑 이미지랑 텍스트 하나씩 보여줌-->
     <div style='text-decoration: none; color: inherit; display: flex;flex-direction:column;justify-content: center;'>
-      <a href="/restaurant?id=<?php echo '$row[restaurant_id]'; ?>"><h3 style='margin-bottom: 10px; margin-top: 0;color: #716e65;'><?php echo "$row[name]"; ?></h3></a>
+      <a href="/restaurant?id=<?php echo $row[
+        'restaurant_id'
+      ]; ?>"><h3 style='margin-bottom: 10px; margin-top: 0;color: #716e65;'><?php echo "$row[name]"; ?></h3></a>
       <div style='color:#716e65; text-size: 20px;'><?php echo "$row[address]"; ?></div>
     </div>
   </div>
