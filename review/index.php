@@ -66,16 +66,18 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
               $original_comment = $row['comment'];
               $original_score = $row['score'];
               ?>
-              <button id = 'open' style='width: 30px; height: 30px;'>Edit</button>  <!-- 자기가 달았던 코멘트에만 보이는 Edit 버튼이랑 Delete 버튼 -->
-              <button style='width: 30px; height: 30px;'><a href='./delete.php?review_id=<?php echo "
-                $row[review_id]"; ?>'>Delete</a></button>
+              <div class='review'style='display:flex; flex-direction:column;justify-content: center;'>
+              <div style='display: flex; flex-direction: row;'>
+              <button id = 'open' class='modal-button' style='height: 40px;width:80px;'>Edit</button>  <!-- 자기가 달았던 코멘트에만 보이는 Edit 버튼이랑 Delete 버튼 -->
+              <button class='modal-button' style='height: 40px;width:80px;'><a href='./delete.php?review_id=<?php echo "
+                $row[review_id]"; ?>' style='text-decoration:none;'>Delete</a></button></div>
               
       <div class="modal hidden">  <!-- Edit 버튼 누르면 나오는 모달 -->
     			<div class="modal-overlay"></div>
-    			<div class="modal-content">
+    			<div class="modal-content" style='width:300px; height: 200px; display:flex; flex-direction: row; justify-content:center;'>
           <form action='./edit.php' method='GET'>
-                     <input type='text' name='edit_comment' placeholder='comment' value=<?php echo "$original_comment"; ?>>
-                      <select id='score' name='edit_score'> 
+                     <input class='modal-input'type='text' name='edit_comment' placeholder='comment' value=<?php echo "$original_comment"; ?>>
+                      <select class='selection'id='score' name='edit_score'> 
                         <option value='0'>0</option>
                         <option value='1'>1</option>
                         <option value='2'>2</option>
@@ -83,7 +85,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
                         <option value='4'>4</option>
                         <option value='5'>5</option>
                       </select>
-                      <input type='submit' name='submit' value="Edit"/> 
+                      <input class='modal-button' style='height: 40px;width:80px;'type='submit' name='submit' value="Edit"/> 
             </form>
     			  </div>
  			  </div>
@@ -93,17 +95,19 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
             }
             ?>
            
-            <div>reviewer: <?php echo "$nickname"; ?> score: <?php echo "$row[score]"; ?> <br> <?php echo "$row[comment]"; ?></div><!-- 리뷰 하나씩 보여줌. -->
+            <div style='display:flex; flex-direction:column;'><div style='color:#716e65;'>reviewer: <?php echo "$nickname"; ?> score: <?php echo "$row[score]"; ?></div>
+            <div style='color:#716e65; font-size: 20px;'><?php echo "$row[comment]"; ?></div></div><!-- 리뷰 하나씩 보여줌. -->
             <?php
           }
         } else {
-          print 'No review written for this restaurant.';
+          print "<div style='display:flex; flex-direction:column align-items:center;'><div style='display:flex; justify-content:center; align-items:center;'>No review written for this restaurant.</div>";
         }
         ?>
+        
   <?php if (isset($_SESSION['id'])) { ?>
-    <form action="./write.php" method="GET">
-	    <input type="text" name="comment" /> <!--댓글 input 박스-->
-      <select id="score" name="score"> <!--score 드롭다운-->
+    <form class='comment-container'action="./write.php" method="GET">
+	    <input class='modal-input' type="text" style='z-index:0;'name="comment" /> <!--댓글 input 박스-->
+      <select class='selection'id="score" name="score"> <!--score 드롭다운-->
             <option value="0">0</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -111,9 +115,10 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
             <option value="4">4</option>
             <option value="5">5</option>
       </select>
-	    <input type="submit" value="Post" />    <!--댓글 post 버튼-->
+	    <input class='modal-button' style='height: 40px;width:80px; 'type="submit" value="Post" />    <!--댓글 post 버튼-->
     </form>
   <?php } ?>
+  </div>
     </section>
   </section>
     <script src="review.js"></script>

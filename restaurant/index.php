@@ -34,6 +34,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
   <h1></h1>
   <h1></h1>
   <h1></h1>  <h1></h1>
+  <h1></h1><h1></h1>
 
   <?php
   $restaurant_id = $_GET['id'];
@@ -50,7 +51,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
 <?php
 if ($result->num_rows > 0) {
   while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
-    print "<img src='$row[image]' style='width: 380px; border-radius: 40px;'></img>"; // 이미지
+    print "<img src='$row[image]' style='width: 350px; border-radius: 40px;'></img>"; // 이미지
     print "<div style='display:flex; flex-direction: column; justify-content: center; margin-left: 150px;'>
               <h3 style='font-size: 20px;color:#707070; margin:0; margin-bottom:8px'>🍣🍖🍔🍜🍰</h3>
               <h3 style='font-size: 30px;color:#707070; margin-bottom:10px; margin-top: 0px;'>$row[name]</h3> 

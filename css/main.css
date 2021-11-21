@@ -11,7 +11,9 @@ body {
   height: 100%;
 }
 input:focus,
-button:focus textarea:focus {
+button:focus,
+textarea:focus,
+select:focus {
   outline: none;
 }
 
@@ -411,7 +413,8 @@ j h3 {
   -ms-overflow-style: none;
 }
 .search-result-container::-webkit-scrollbar,
-.res-inside::-webkit-scrollbar {
+.res-inside::-webkit-scrollbar,
+.review::-webkit-scrollbar {
   display: none;
 }
 
@@ -424,3 +427,20 @@ j h3 {
   height: 700px;
 }
 
+.review {
+  overflow-y: auto;
+  -ms-overflow-style: none;
+}
+.comment-container {
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+  margin: 10px;
+}
+
+.selection {
+  margin: 10px;
+  background-color: transparent;
+  color: #716e65;
+  border: none;
+}

@@ -75,7 +75,9 @@ if ($result->num_rows > 0) {
   <div style='width: 35%;
   box-sizing: border-box; height: 160px; margin-top: 15px;margin-bottom: 15px; padding: 15px;border-radius: 20px; margin-left: 20px; margin-right: 20px;background-color: #fcfaf6; box-shadow: 0px 1px 30px rgba(145, 145, 145, 0.2); display: flex;'>
     <img src=<?php echo "$row[image]"; ?> style='width: 140px; height: 140px; border-radius: 50%; margin-right: 50px; margin-left: 10px;'></img> 
-    <a href="/restaurant?id=<?php echo $row['restaurant_id']; ?>">
+    <a href="/restaurant?id=<?php echo $row[
+      'restaurant_id'
+    ]; ?>" style='text-decoration: none;'>
       <div style='text-decoration: none; color: inherit; display: flex;flex-direction:column;justify-content: center;'>
       <h3 style='margin-bottom: 10px; margin-top: 0;color: #716e65;'><?php echo "$row[name]"; ?></h3></a>
       <div style='color:#716e65; text-size: 20px;'><?php echo "$row[address]"; ?></div>
