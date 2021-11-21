@@ -443,3 +443,9 @@ j h3 {
   color: #716e65;
   border: none;
 }
+
+.info {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
