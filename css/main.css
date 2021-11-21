@@ -396,3 +396,16 @@ j h3 {
   justify-content: space-between;
   align-content: center;
 }
+
+.search-result-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow-y: auto;
+  margin-top: 0px;
+  -ms-overflow-style: none;
+}
+
+.search-result-container::-webkit-scrollbar {
+  display: none;
+}
