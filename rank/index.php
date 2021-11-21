@@ -38,7 +38,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
 <h4>Current Statistics</h4>
 <?php
 $query1 =
-  'SELECT c.`category_id`, c.`name` AVG(score) AS average FROM Restaurant r JOIN Category c ON r.category_id = c.category_id GROUP BY r.category_id ORDER BY average DESC;';
+  'SELECT c.`category_id`, c.`name`, AVG(score) AS average FROM Restaurant r JOIN Category c ON r.category_id = c.category_id GROUP BY r.category_id ORDER BY average DESC;';
 $result = $mysqli->query($query1);
 $first_row = $result->fetch_array();
 $popular_category_id = $first_row['category_id'];
@@ -51,8 +51,8 @@ $first_row = $result->fetch_array();
 $max_category_score = $first_row['max_average'];
 echo "most popular category : $popular_category_name ( score : $max_category_score ) <br>"; // most popular category
 
-$query3 = 'SELECT b.`restaurant_id`, b.`name`, AVG(score) AS average FROM Restaurant a JOIN Region b ON a.region_id = b.region_id 
-  GROUP BY a.region_id ORDER BY average DESC;';
+$query3 = 'SELECT a.`restaurant_id`, b.`name`, AVG(score) AS average FROM Restaurant a JOIN Region b ON a.region_id = b.region_id 
+GROUP BY a.region_id ORDER BY average DESC;';
 $result = $mysqli->query($query3);
 $first_row = $result->fetch_array();
 $popular_region_id = $first_row['restaurant_id'];
@@ -66,7 +66,7 @@ $max_region_score = $first_row['max_average'];
 echo "most popular region : $popular_region_name ( score : $max_region_score ) <br>"; // most popular region
 
 $query5 =
-  'SELECT NAME, MAX(score) AS SCORE FROM Restaurant GROUP BY region_id, category_id ORDER BY SCORE DESC;';
+  'SELECT `restaurant_id`, `name`, MAX(score) AS `score` FROM Restaurant GROUP BY region_id, category_id ORDER BY SCORE DESC;';
 $result = $mysqli->query($query5);
 $first_row = $result->fetch_array();
 $popular_restaurant_id = $first_row['restaurant_id'];
