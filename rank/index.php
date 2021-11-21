@@ -99,7 +99,7 @@ echo "most popular restaurant recommended : $popular_restaurant_name ( score : $
  }
  ?>
  <!--여기서부터 그리드 아이템-->
-  <div class="container" style="display: grid; grid-template-columns: 500px 300px; grid-template-rows: 190px; grid-template-columns: 480px 480px; place-content: center; place-items:center; padding: 10px; margin:0px;">
+  <div class="container" style="display: grid; grid-template-rows: 190px; grid-template-columns: 480px 480px; place-content: center; place-items:center; padding: 10px; margin:0px;">
   <?php if ($restaurant_list->num_rows > 0) {
     while ($row = $restaurant_list->fetch_array(MYSQLI_ASSOC)) {
       $onclick_query = "location.href='/restaurant?name=$row[restaurant_id];";
