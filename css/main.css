@@ -313,9 +313,7 @@ img {
   -ms-overflow-style: none;
   scrollbar-width: none;
   padding: 10px;
-}
-.nav-bar :-webkit-scrollbar {
-  display: none;
+  padding-bottom: 30px;
 }
 
 .outside {
@@ -369,7 +367,8 @@ j h3 {
   -ms-overflow-style: none;
 }
 
-.res-detail-container::-webkit-scrollbar {
+.res-detail-container::-webkit-scrollbar,
+.nav-bar::-webkit-scrollbar {
   display: none;
 }
 
