@@ -11,7 +11,21 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
 </head>
 <body>
 <section class="main-container">
-    <section id="main" style="display: flex; flex-direction: column;">
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/php/nav.php'; ?>
+<section class="res-detail-page">
+  <div class="side-bar">
+    <a href='/'>
+      <button class="side-bar-button">
+        <img src='../public/logo.png'/>
+      </button>
+  </a>
+  <a href='javascript:history.back()'>
+    <button class="side-bar-button">
+      <img src='../public/backButton.png'/>
+    </button>
+  </a>
+  </div>
+    <section class='review-container'id="main">
         <?php
         $restaurant_id = $_GET['id'];
         $_SESSION['history'] = $restaurant_id;
@@ -27,9 +41,11 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/mysqli.inc';
         }
         if ($result1->num_rows > 0) {
           while ($row = $result1->fetch_array(MYSQLI_ASSOC)) {
-            print "<img src='$row[image]' style='width: 370px; height: 280px;'></img>"; // 이미지
-            print "<h3>$row[name]</h3>"; // 식당 이름
-            print "<h3>$row[address]</h3>"; // 식당 주소
+            print "<div style=' display: flex;flex-direction: column; justify-content: center;align-content: center; margin-right: 30px;'>
+            <img src='$row[image]' style='width: 370px; height: 280px; border-radius:30px;'></img>
+            <h3 style='font-size: 30px;color:#707070; margin-bottom: 5px;'>$row[name]</h3>
+            <h3 style='font-size: 20px;color:#707070;'>$row[address]</h3>
+            </div>"; // 식당 주소
           }
         } else {
           print 'Error occured on loading restaurant information.';
