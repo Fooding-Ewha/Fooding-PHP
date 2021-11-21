@@ -359,9 +359,10 @@ j h3 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  align-content: center;
   width: 1500px;
-  height: 100px;
-  overflow-y: scroll;
+  height: 600px;
+  overflow-y: auto;
   margin-left: 20px;
   -ms-overflow-style: none;
 }
@@ -406,6 +407,10 @@ j h3 {
   -ms-overflow-style: none;
 }
 
-.search-result-container::-webkit-scrollbar {
+.res-inside {
+  -ms-overflow-style: none;
+}
+.search-result-container::-webkit-scrollbar,
+.res-inside::-webkit-scrollbar {
   display: none;
 }
