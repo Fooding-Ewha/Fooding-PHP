@@ -1,4 +1,5 @@
 # Fooding-PHP
+![image](https://user-images.githubusercontent.com/78165538/153905350-8f6d9560-86cc-40b5-ba96-e896a9a1ddf1.png)
 
 Fooding is a platform that provides recommendations and reviews for restaurants in Seoul
 
